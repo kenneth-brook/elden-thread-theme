@@ -6,6 +6,17 @@
   --focused-base-outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+
+  --midnight-blue: #191970;
+  --gold:          #B8860B;
+  --ivory:         #FAF3E0;
+  --forest-green:  #14532D;
+  --royal-plum:    #4B0082;
+
+  /* Font stacks */
+  --font-body:     'Lato', sans-serif;
+  --font-subtitle: 'Libre Baskerville', serif;
+  --font-header:   'Tangerine', cursive;
 }
 
 .product-card-wrapper .card,
