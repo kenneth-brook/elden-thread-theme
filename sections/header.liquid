@@ -1,0 +1,12 @@
+<header style="padding:1rem;background:{{ settings.primary_color }};">
+  <h1 style="font-family:{{ settings.header_font.family }};color:{{ settings.accent_color }};">
+    {{ shop.name }}
+  </h1>
+  <nav>
+    {% for link in linklists.main-menu.links %}
+      <a href="{{ link.url }}" style="margin-right:1rem;color:{{ settings.primary_color }};">
+        {{ link.title }}
+      </a>
+    {% endfor %}
+  </nav>
+</header>

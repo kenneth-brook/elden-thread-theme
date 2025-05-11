@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Color Palette",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#191970"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent Color",
+        "default": "#B8860B"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body Font",
+        "default": "Lato"
+      },
+      {
+        "type": "font_picker",
+        "id": "header_font",
+        "label": "Header Font",
+        "default": "Tangerine"
+      }
+    ]
+  }
+]

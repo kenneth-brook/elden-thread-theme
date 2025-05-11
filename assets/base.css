@@ -1,0 +1,13 @@
+:root {
+  --primary-color: {{ settings.primary_color }};
+  --accent-color:  {{ settings.accent_color }};
+  --font-body:     '{{ settings.body_font.family }}', sans-serif;
+  --font-header:   '{{ settings.header_font.family }}', cursive;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--primary-color);
+  background: #fff;
+}
