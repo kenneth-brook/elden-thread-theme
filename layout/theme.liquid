@@ -13,6 +13,22 @@
 
   <!-- Base Styles -->
   {{ 'base.css'  | asset_url | stylesheet_tag }}
+
+  {% style %}
+  {% case settings.body_font %}
+    {% when "Libre Baskerville" %}
+      :root { --font-body: 'Libre Baskerville', serif; }
+    {% else %}
+      :root { --font-body: 'Lato', sans-serif; }
+  {% endcase %}
+
+  {% case settings.header_font %}
+    {% when "Libre Baskerville" %}
+      :root { --font-header: 'Libre Baskerville', serif; }
+    {% else %}
+      :root { --font-header: 'Tangerine', cursive; }
+  {% endcase %}
+{% endstyle %}
 </head>
 <body>
   {% section 'header' %}
