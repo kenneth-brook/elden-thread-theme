@@ -1,8 +1,70 @@
-<section style="padding:3rem;text-align:center;">
-  <h2 style="font-family:{{ settings.header_font.family }};color:{{ settings.primary_color }};">
-    Welcome to {{ shop.name }}
-  </h2>
-  <p style="font-family:{{ settings.body_font.family }};color:{{ settings.accent_color }};">
-    Crafting timeless embroidery & custom prints
-  </p>
+<section class="hero-banner relative text-center py-20 px-4" style="background-color: var(--ivory);">
+  {% if section.settings.image %}
+    <div class="absolute inset-0 z-0">
+      <img
+        src="{{ section.settings.image | image_url: width: 1600 }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  {% endif %}
+
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <h1 class="text-5xl md:text-6xl font-header text-gold">{{ section.settings.heading }}</h1>
+    <p class="mt-4 text-xl font-subtitle italic text-forest">{{ section.settings.subheading }}</p>
+
+    {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+      <a
+        href="{{ section.settings.button_link }}"
+        class="inline-block mt-6 px-6 py-3 bg-gold text-ivory text-lg rounded shadow hover:opacity-90 transition"
+      >
+        {{ section.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
 </section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Welcome to The Elden Thread"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Where craft meets magic."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Banner"
+    }
+  ]
+}
+{% endschema %}

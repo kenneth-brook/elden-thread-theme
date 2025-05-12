@@ -1,14 +1,36 @@
-<header style="padding:1rem; background:{{ settings.primary_color }};">
-  <h1 style="font-family: var(--font-header); color: {{ settings.accent_color }};">
-    {{ shop.name }}
-  </h1>
-  <nav>
-    {% for link in linklists.main-menu.links %}
-      <a href="{{ link.url }}"
-         style="margin-right:1rem; color: {{ settings.primary_color }};">
-        {{ link.title }}
-      </a>
-    {% endfor %}
-  </nav>
+<header class="site-header">
+  <div class="header-inner">
+    <p>Font Header: {{ settings.font_header }}</p>
+<p>Accent Color: {{ settings.accent_color }}</p>
+<p>Primary Color: {{ settings.primary_color }}</p>
+    <h1 class="site-title">{{ shop.name }}</h1>
+
+    <nav class="site-nav">
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}" class="nav-link">
+          {{ link.title }}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
 </header>
 
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Header background color",
+      "default": "#191970"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Title color",
+      "default": "#B8860B"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+{
+  "name": "elden-thread",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "alpinejs": "^3.14.9",
+    "autoprefixer": "^10.4.21",
+    "date-fns": "^4.1.0",
+    "gsap": "^3.13.0",
+    "micromodal": "^0.6.1",
+    "postcss": "^8.5.3",
+    "postcss-nesting": "^13.0.1",
+    "vite": "^6.3.5"
+  }
+}

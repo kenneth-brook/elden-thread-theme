@@ -1,39 +1,44 @@
-<!DOCTYPE html>
-<html lang="{{ shop.locale }}">
-<head>
+<!doctype html>
+<html lang="{{ request.locale }}">
+  <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ page_title }} – {{ shop.name }}</title>
+  <title>{{ page_title }}</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital@1&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Vars from Theme Settings -->
+  <style>
+    :root {
+      --midnight-blue: {{ settings.color_midnight_blue }};
+      --gold: {{ settings.color_gold }};
+      --ivory: {{ settings.color_ivory }};
+      --forest-green: {{ settings.color_forest_green }};
+      --royal-plum: {{ settings.color_royal_plum }};
+      --neutral-dark: {{ settings.color_dark_neutral }};
+
+      --font-body: 'Lato', sans-serif;
+      --font-subtitle: 'Libre Baskerville', serif;
+      --font-header: 'Tangerine', cursive;
+
+      --primary-color: {{ settings.primary_color }};
+      --accent-color: {{ settings.accent_color }};
+    }
+  </style>
+
+  <!-- Theme CSS -->
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+  <!-- Shopify Scripts and Meta -->
   {{ content_for_header }}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  {{ 'fonts.css' | asset_url | stylesheet_tag }}
-
-  <!-- Base Styles -->
-  {{ 'base.css'  | asset_url | stylesheet_tag }}
-
-  {% style %}
-  {% case settings.body_font %}
-    {% when "Libre Baskerville" %}
-      :root { --font-body: 'Libre Baskerville', serif; }
-    {% else %}
-      :root { --font-body: 'Lato', sans-serif; }
-  {% endcase %}
-
-  {% case settings.header_font %}
-    {% when "Libre Baskerville" %}
-      :root { --font-header: 'Libre Baskerville', serif; }
-    {% else %}
-      :root { --font-header: 'Tangerine', cursive; }
-  {% endcase %}
-{% endstyle %}
+  <!-- Theme JS -->
+  {{ 'theme.js' | asset_url | script_tag }}
 </head>
-<body>
-  {% section 'header' %}
-  {{ content_for_layout }}
-  {% section 'hero' %}
-  {% section 'footer' %}
-</body>
+
+  <body>
+    <main role="main">
+      {{ content_for_layout }}
+    </main>
+  </body>
 </html>

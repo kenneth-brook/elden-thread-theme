@@ -1,0 +1,15 @@
+# ——— Theme metadata ———
+name    = "The Elden Thread"   # Friendly name shown in the CLI & Admin
+version = "0.0.1"                    # Your own versioning convention
+
+# ——— Default environment ———
+# Used by all theme commands (dev, pull, push) when you omit --store/--theme
+[default]
+store = "the-elden-thread.myshopify.com"   # your dev‐store handle
+theme = ""                       # the theme ID in that store
+
+# ——— (Optional) Production environment ———
+# Define a second environment for when you want to deploy to your live store
+[environments.production]
+store = "the-elden-thread.myshopify.com"   # or your live‐store handle
+theme = ""  

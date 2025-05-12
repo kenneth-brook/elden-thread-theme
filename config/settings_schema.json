@@ -1,43 +1,62 @@
 [
   {
-    "name": "Color Palette",
+    "name": "Theme settings",
     "settings": [
+      { "type": "color", "id": "color_midnight_blue", "label": "Midnight Blue", "default": "#191970" },
+      { "type": "color", "id": "color_gold", "label": "Gold", "default": "#B8860B" },
+      { "type": "color", "id": "color_ivory", "label": "Ivory", "default": "#FAF3E0" },
+      { "type": "color", "id": "color_forest_green", "label": "Forest Green", "default": "#14532D" },
+      { "type": "color", "id": "color_royal_plum", "label": "Royal Plum", "default": "#4B0082" },
+      { "type": "color", "id": "color_dark_neutral", "label": "Dark Neutral (#333)", "default": "#333333" },
       {
-        "type":    "color",
-        "id":      "primary_color",
-        "label":   "Primary Color",
-        "default": "#191970"
+    "type": "color",
+    "id": "primary_color",
+    "label": "Primary Color (e.g. Header Background)",
+    "default": "#191970"
+  },
+  {
+    "type": "color",
+    "id": "accent_color",
+    "label": "Accent Color (e.g. Header Title)",
+    "default": "#B8860B"
+  },
+      {
+        "type": "select",
+        "id": "font_body",
+        "label": "Body font",
+        "default": "lato",
+        "options": [
+          { "value": "lato", "label": "Lato" }
+        ]
       },
       {
-        "type":    "color",
-        "id":      "accent_color",
-        "label":   "Accent Color",
-        "default": "#B8860B"
+        "type": "select",
+        "id": "font_subtitle",
+        "label": "Subtitle font",
+        "default": "libre-baskerville",
+        "options": [
+          { "value": "libre-baskerville", "label": "Libre Baskerville" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "font_header",
+        "label": "Header font",
+        "default": "tangerine",
+        "options": [
+          { "value": "tangerine", "label": "Tangerine" }
+        ]
       }
     ]
   },
   {
-    "name": "Typography",
+    "name": "General",
     "settings": [
       {
-        "type":    "select",
-        "id":      "body_font",
-        "label":   "Body Font",
-        "default": "Lato",
-        "options": [
-          { "value": "Lato",               "label": "Lato" },
-          { "value": "Libre Baskerville",  "label": "Libre Baskerville" }
-        ]
-      },
-      {
-        "type":    "select",
-        "id":      "header_font",
-        "label":   "Header Font",
-        "default": "Tangerine",
-        "options": [
-          { "value": "Tangerine",          "label": "Tangerine" },
-          { "value": "Libre Baskerville",  "label": "Libre Baskerville" }
-        ]
+        "type": "checkbox",
+        "id": "enable_custom_ui",
+        "label": "Enable custom UI",
+        "default": false
       }
     ]
   }

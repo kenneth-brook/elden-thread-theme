@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main-header": {
+      "type": "header"
+    },
+    "main-product": {
+      "type": "product-template"
+    },
+    "main-footer": {
+      "type": "footer"
+    }
+  },
+  "order": [
+    "main-header",
+    "main-product",
+    "main-footer"
+  ]
+}

@@ -1,0 +1,33 @@
+<section class="product-page">
+  <div class="product-container">
+    {% if product.featured_image %}
+      <div class="product-image">
+        <img
+          src="{{ product.featured_image | image_url: width: 900 }}"
+          width="{{ product.featured_image.width }}"
+          height="{{ product.featured_image.height }}"
+          alt="{{ product.title }}"
+        />
+      </div>
+    {% endif %}
+
+    <div class="product-details">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-description">{{ product.description }}</p>
+
+      {% form 'product', product %}
+        <div class="product-price">{{ form | product_price }}</div>
+        <div class="product-quantity">{{ form | product_quantity }}</div>
+
+        <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Template",
+  "settings": []
+}
+{% endschema %}
