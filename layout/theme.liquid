@@ -4,11 +4,32 @@
   <meta charset="utf-8">
   <title>{{ page_title }}</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:ital@1&family=Tangerine:wght@700&display=swap" rel="stylesheet">
 
-  <!-- CSS Vars from Theme Settings -->
   <style>
+    @font-face {
+    font-family: 'Lato';
+    src: url({{ 'Lato-Regular.woff2' | asset_url }}) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Libre Baskerville';
+    src: url({{ 'LibreBaskerville-Italic.woff2' | asset_url }}) format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Tangerine';
+    src: url({{ 'Tangerine-Bold.woff2' | asset_url }}) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
     :root {
       --midnight-blue: {{ settings.color_midnight_blue }};
       --gold: {{ settings.color_gold }};
@@ -18,8 +39,8 @@
       --neutral-dark: {{ settings.color_dark_neutral }};
 
       --font-body: 'Lato', sans-serif;
-      --font-subtitle: 'Libre Baskerville', serif;
-      --font-header: 'Tangerine', cursive;
+    --font-subtitle: 'Libre Baskerville', serif;
+    --font-header: 'Tangerine', cursive;
 
       --primary-color: {{ settings.primary_color }};
       --accent-color: {{ settings.accent_color }};

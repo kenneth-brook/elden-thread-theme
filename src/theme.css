@@ -9,18 +9,16 @@
 }
 
 body {
-  background-color: var(--ivory);
-  color: var(--neutral-dark);
   font-family: var(--font-body);
-}
-
-h1, h2, h3 {
-  font-family: var(--font-header);
 }
 
 .subtitle {
   font-family: var(--font-subtitle);
   font-style: italic;
+}
+
+.site-title, h1, h2, h3 {
+  font-family: var(--font-header);
 }
 
 
